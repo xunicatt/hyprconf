@@ -23,6 +23,7 @@ packages=(
     go
     firefox
     nautilus
+    xrdb
 )
 scripts=(
     battery
@@ -42,10 +43,13 @@ function sync {
     echo "[INFO] syncing scripts";
     for script in ${scripts[@]}
     do
-        mkdir -p bin
-        cp -f "$custom_scripts_dir/$script" bin
+        mkdir -p bin;
+        cp -f "$custom_scripts_dir/$script" bin;
         echo "[INFO] synced script '$custom_scripts_dir/$script'";
     done
+
+    cp "$HOME/.Xresources" .;
+    echo "[INFO] copied '.Xresources' file";
 }
 
 function install {
@@ -72,6 +76,9 @@ function extras {
         sudo chmod u+x "$custom_scripts_dir/$script";
         echo "[INFO] copied '$script' file to '$custom_scripts_dir'";
     done
+
+    cp .Xresources $HOME;
+    echo "[INFO] copied '.Xresources' file to '$HOME'";
 }
 
 function setup {
