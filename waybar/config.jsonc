@@ -1,0 +1,63 @@
+{
+  //root
+  "layer": "top",
+  "output": "eDP-1",
+  "height": 40,
+  "spacing": 5,
+  "modules-left": ["custom/power-menu", "hyprland/workspaces", "sway/mode"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "network",
+    "cpu",
+    "temperature",
+    "memory",
+    "custom/battery",
+    "pulseaudio",
+    "clock",
+  ],
+  //left
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+  },
+  "custom/power-menu": {
+    "format": "",
+    "on-click": "~/.config/rofi/powermenu/powermenu.sh",
+  },
+  //center
+  "hyprland/window": {
+    "max-length": 64,
+    "format": "{class}",
+  },
+  //right
+  "cpu": {
+    "format": "[CPU: {usage}%",
+  },
+  "temperature": {
+    "critical-threshold": 60,
+    "format": "{temperatureC}°C]",
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
+  },
+  "clock": {
+    "format": "[{:%d/%m/%Y %I:%M %p}]",
+  },
+  "custom/battery": {
+    "exec": "~/.bin/battery",
+    "format": "[BAT: {}]",
+    "interval": 2,
+  },
+  "pulseaudio": {
+    "format": "[󰕾 {volume}%]",
+    "format-muted": "[󰖁 Muted]",
+    "scroll-step": 1,
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "memory": {
+    "format": "[MEM: {used}GB/{total}GB]",
+  },
+  "network": {
+    "interface": "wlp1s0f0",
+    "interval": 1,
+    "format": "[ {bandwidthUpBits}  {bandwidthDownBits}]",
+  },
+}

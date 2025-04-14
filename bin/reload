@@ -1,0 +1,5 @@
+killall waybar
+killall hyprpaper
+hyprpaper
+waybar
+hyprctl reload

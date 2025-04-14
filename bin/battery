@@ -1,0 +1,13 @@
+cap=`cat /sys/class/power_supply/macsmc-battery/capacity`
+cap+="%"
+state=`cat /sys/class/power_supply/macsmc-battery/status`
+case "$state" in
+	"Charged")
+		;;
+	"Discharging")
+		;;
+	"Charging")
+		cap+=" 󱐋"
+		;;
+esac
+echo $cap

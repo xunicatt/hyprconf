@@ -1,0 +1,100 @@
+set -e
+command=$1
+config_path="$HOME/.config"
+custom_scripts_dir="$HOME/.bin"
+config_dirs=(
+    alacritty
+    dunst
+    hypr
+    rofi
+    tmux
+    waybar
+)
+packages=(
+    wl-clipboard
+    hyprland
+    hypridle
+    hyprpaper
+    hyprlock
+    waybar
+    alacritty
+    dunst
+    rofi-wayland
+    go
+    firefox
+    nautilus
+)
+scripts=(
+    battery
+    clipboard
+    reload
+    hyprshot
+)
+
+function sync {
+    echo "[INFO] syncing files";
+    for config_dir in ${config_dirs[@]}
+    do
+        cp -rf  "$config_path/$config_dir" .;
+        echo "[INFO] synced file '$config_path/$config_dir'";
+    done
+
+    echo "[INFO] syncing scripts";
+    for script in ${scripts[@]}
+    do
+        mkdir -p bin
+        cp -f "$custom_scripts_dir/$script" bin
+        echo "[INFO] synced script '$custom_scripts_dir/$script'";
+    done
+}
+
+function install {
+    echo "[INFO] updating system";
+    echo "[INFO] password may be needed to continue";
+    sudo dnf update -y;
+    echo "[INFO] installing packages";
+    for package in ${packages[@]}
+    do
+        sudo dnf install $package;
+        echo "[INFO] installed $package";
+    done
+
+    echo "[INFO] installing clipboard manager";
+    go install go.senan.xyz/cliphist@latest;
+}
+
+function extras {
+    echo "[INFO] copying scripts to '$custom_scripts_dir'";
+    mkdir -p $custom_scripts_dir;
+    for script in ${scripts[@]}
+    do
+        cp -f "bin/$script" "$custom_scripts_dir";
+        sudo chmod u+x "$custom_scripts_dir/$script";
+        echo "[INFO] copied '$script' file to '$custom_scripts_dir'";
+    done
+}
+
+function setup {
+    echo "[INFO] copying configs to $config_path";
+    for config_dir in ${config_dirs[@]}
+    do
+        if [ -d "$config_path/$config_dir" ]
+        then
+            echo "[WARN] directory already exists: '$config_path/$config_dir'";
+            echo "[WARN] creating backup at: $(printf '%s/%s_bak' $config_path $config_dir)";
+            mv "$config_path/$config_dir" "$(printf '%s/%s_bak' $config_path $config_dir)";
+        fi
+
+        cp -rf ./$config_dir $config_path;
+        echo "[INFO] copied config file at '$config_path/$config_dir'";
+    done
+
+    extras
+}
+
+case $command in
+    "sync") sync;;
+    "install") install;;
+    "setup") setup;;
+    *) echo "unknown option: '$command'";;
+esac

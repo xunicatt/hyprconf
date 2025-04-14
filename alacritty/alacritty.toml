@@ -1,0 +1,40 @@
+
+[window]
+padding = { x = 10, y = 5 }
+dynamic_padding = true
+decorations = "None"
+opacity = 0.8
+
+[font]
+normal = { family = "MesloLGLDZ Nerd Font", style = "Regular" }
+size = 11
+
+[colors]
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[cursor]
+style = { shape = "Underline", blinking = "On" }
+vi_mode_style = { shape = "Underline", blinking = "On" }
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+    { key = "T", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "U", mods = "Control", action = "ScrollLineUp" },
+    { key = "D", mods = "Control", action = "ScrollLineDown" },
+    { key = "U", mods = "Control|Shift", action = "ScrollHalfPageUp" },
+    { key = "D", mods = "Control|Shift", action = "ScrollHalfPageDown" }
+]
+
+[general]
+live_config_reload = true
+working_directory = "/home/xunicatt"
+
+[terminal]
+shell = "/bin/bash"

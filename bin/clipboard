@@ -1,0 +1,1 @@
+~/go/bin/cliphist list | rofi -display-columns 2 -dmenu -p clipboard -config ~/.config/rofi/clipboard/style.rasi | ~/go/bin/cliphist decode | wl-copy
