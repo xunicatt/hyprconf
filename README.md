@@ -11,6 +11,8 @@ Config files for:
 - waybar
 - alacrity
 - dunst
+- rofi
+- tmux
 
 Scipts for:
 - battery
