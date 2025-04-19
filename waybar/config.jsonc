@@ -4,8 +4,12 @@
   "output": "eDP-1",
   "height": 40,
   "spacing": 5,
-  "modules-left": ["custom/power-menu", "hyprland/workspaces", "sway/mode"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": [
+    "custom/power-menu",
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+  "modules-center": [],
   "modules-right": [
     "network",
     "cpu",
@@ -26,7 +30,13 @@
   //center
   "hyprland/window": {
     "max-length": 64,
-    "format": "{class}",
+    "icon": true,
+    "icon-size": 18,
+    "format": "{title}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "Firefox",
+      "(.*)Psst(.*)": "Spotify",
+    },
   },
   //right
   "cpu": {
