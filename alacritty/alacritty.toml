@@ -6,7 +6,7 @@ decorations = "None"
 opacity = 0.8
 
 [font]
-normal = { family = "MesloLGLDZ Nerd Font", style = "Regular" }
+normal = { family = "MesloLGLDZNerdFont", style = "Regular" }
 size = 11
 
 [colors]

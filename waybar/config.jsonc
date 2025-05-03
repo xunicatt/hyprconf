@@ -2,22 +2,19 @@
   //root
   "layer": "top",
   "output": "eDP-1",
-  "height": 40,
-  "spacing": 5,
+  "height": 20,
+  "spacing": 10,
   "modules-left": [
     "custom/power-menu",
     "hyprland/workspaces",
     "hyprland/window",
   ],
-  "modules-center": [],
+  "modules-center": ["custom/timedate"],
   "modules-right": [
-    "network",
-    "cpu",
-    "temperature",
-    "memory",
-    "custom/battery",
+    "custom/netwifi",
+    "custom/netblu",
     "pulseaudio",
-    "clock",
+    "custom/battery",
   ],
   //left
   "hyprland/workspaces": {
@@ -39,35 +36,32 @@
     },
   },
   //right
-  "cpu": {
-    "format": "[CPU: {usage}%",
-  },
-  "temperature": {
-    "critical-threshold": 60,
-    "format": "{temperatureC}°C]",
-    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
-  },
-  "clock": {
-    "format": "[{:%d/%m/%Y %I:%M %p}]",
+  "custom/timedate": {
+    "exec": "~/go/bin/bard time-date",
+    "format": "{}",
   },
   "custom/battery": {
-    "exec": "~/.bin/battery",
-    "format": "[BAT: {}]",
+    "exec": "~/go/bin/bard battery",
+    "format": "{}",
     "interval": 2,
   },
   "pulseaudio": {
-    "format": "[󰕾 {volume}%]",
-    "format-muted": "[󰖁 Muted]",
+    "format": "󰕾 {volume}%",
+    "format-muted": "󰖁 Muted",
     "scroll-step": 1,
     "on-click-right": "pavucontrol",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   },
-  "memory": {
-    "format": "[MEM: {used}GB/{total}GB]",
+  "custom/netwifi": {
+    "exec": "~/go/bin/bard net-wifi",
+    "format": "{} ",
+    "interval": 2,
+    "on-click": "~/go/bin/bard net-wifi-toggle",
   },
-  "network": {
-    "interface": "wlp1s0f0",
-    "interval": 1,
-    "format": "[ {bandwidthUpBits}  {bandwidthDownBits}]",
+  "custom/netblu": {
+    "exec": "~/go/bin/bard net-blu",
+    "format": "{} ",
+    "interval": 2,
+    "on-click": "~/go/bin/bard net-blu-toggle",
   },
 }

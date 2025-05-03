@@ -26,7 +26,6 @@ packages=(
     xrdb
 )
 scripts=(
-    battery
     clipboard
     reload
     hyprshot
@@ -65,6 +64,11 @@ function install {
 
     echo "[INFO] installing clipboard manager";
     go install go.senan.xyz/cliphist@latest;
+
+    echo "[INFO] installing bard utility";
+    cd bard;
+    go install .;
+    cd ..;
 }
 
 function extras {
