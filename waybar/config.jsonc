@@ -2,7 +2,7 @@
   //root
   "layer": "top",
   "output": "eDP-1",
-  "height": 20,
+  "height": 32,
   "spacing": 10,
   "modules-left": [
     "custom/power-menu",
@@ -11,6 +11,8 @@
   ],
   "modules-center": ["custom/timedate"],
   "modules-right": [
+    "cpu",
+    "memory",
     "custom/netwifi",
     "custom/netblu",
     "pulseaudio",
@@ -36,9 +38,20 @@
     },
   },
   //right
+  "cpu": {
+    "interval": 10,
+    "format": "{usage:2d}%  ",
+    "max-length": 10,
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{percentage:2d}%  ",
+    "max-length": 10,
+  },
   "custom/timedate": {
     "exec": "~/go/bin/bard time-date",
     "format": "{}",
+    "interval": 1,
   },
   "custom/battery": {
     "exec": "~/go/bin/bard battery",
