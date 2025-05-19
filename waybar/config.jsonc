@@ -2,10 +2,10 @@
   //root
   "layer": "top",
   "output": "eDP-1",
-  "height": 32,
+  "height": 35,
   "spacing": 10,
   "modules-left": [
-    "custom/power-menu",
+    "custom/app-menu",
     "hyprland/workspaces",
     "hyprland/window",
   ],
@@ -13,17 +13,24 @@
   "modules-right": [
     "cpu",
     "memory",
-    "custom/netwifi",
-    "custom/netblu",
+    "custom/keyboard-brightness",
     "pulseaudio",
     "custom/battery",
+    "custom/notification",
+    "custom/netwifi",
+    "custom/netblu",
+    "custom/power-menu",
   ],
   //left
   "hyprland/workspaces": {
     "disable-scroll": true,
   },
+  "custom/app-menu": {
+    "format": "Apps",
+    "on-click": "~/.bin/launcher",
+  },
   "custom/power-menu": {
-    "format": "",
+    "format": "󰤆",
     "on-click": "~/.config/rofi/powermenu/powermenu.sh",
   },
   //center
@@ -59,11 +66,24 @@
     "interval": 2,
   },
   "pulseaudio": {
-    "format": "󰕾 {volume}%",
-    "format-muted": "󰖁 Muted",
+    "format": "{volume}% 󰕾",
+    "format-muted": "Muted 󰖁",
     "scroll-step": 1,
     "on-click-right": "pavucontrol",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "custom/keyboard-brightness": {
+    "format": "{}%  ",
+    "exec": "brightnessctl -m -d kbd_backlight | awk -F, '{print substr($4, 0, length($4)-1)}'",
+    "on-scroll-up": "brightnessctl -d kbd_backlight s +10%",
+    "on-scroll-down": "brightnessctl -d kbd_backlight s 10%-",
+    "interval": 1,
+  },
+  "custom/notification": {
+    "exec": "~/.bin/notification",
+    // "format": "{} ",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
   },
   "custom/netwifi": {
     "exec": "~/go/bin/bard net-wifi",

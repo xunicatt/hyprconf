@@ -29,6 +29,7 @@ scripts=(
     clipboard
     reload
     hyprshot
+    notification
 )
 
 function sync {

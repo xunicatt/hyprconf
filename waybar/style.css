@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
   transition-duration: 100ms;
 }
 
@@ -17,81 +17,125 @@ button {
 }
 
 button:hover {
-  box-shadow: none; /* Remove predefined box-shadow */
-  text-shadow: none; /* Remove predefined text-shadow */
-  background: none; /* Remove predefined background color (white) */
-  transition: none; /* Disable predefined animations */
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: none;
 }
 
 #window {
+  margin-top: 5px;
+  margin-left: 10px;
   color: rgba(255, 255, 255, 0.596);
 }
 
 #workspaces {
-  background-color: transparent;
+  background: #B8B0D7;
+
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
+
   padding-left: 4px;
-  padding-right: 4px;
+  padding-right: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  border-radius: 6px;
 }
 
 #workspaces button {
-  padding: 0 5px;
-  color: #eb4d4b;
-  background: transparent;
+  color: #B8B0D7;
+  background: #463682;
+
+  margin-right: 4px;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+
   transition-duration: 0.35s;
+  border-radius: 4px;
+  font-weight: 900;
 }
 
 #workspaces button.active {
-  color: cornflowerblue;
+  background: #22095D;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
   box-shadow: none;
 }
 
 #workspaces button.urgent {
-  color: aquamarine;
+  color: red;
 }
 
-.module-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-.module-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-
-#custom-battery {
-  margin-right: 10px;
+#custom-power-menu {
+  margin-right: 15px;
 }
 
 #cpu,
-#temperature,
 #memory,
 #pulseaudio,
 #custom-battery,
-#custom-netwifi,
-#custom-netblu,
+#custom-keyboard-brightness,
 #custom-timedate {
-  color: rgba(255, 255, 255, 0.596);
+  color: #22095D;
+  background: #B8B0D7;
+
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
+
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+#custom-timedate {
+  font-weight: 600;
 }
 
 #custom-netwifi,
-#custom-netblu {
+#custom-netblu,
+#custom-notification,
+#custom-power-menu {
+  color: #B8B0D7;
+  background: transparent;
   font-size: 14px;
+
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
+}
+
+#custom-notification {
+  margin-left: 8px;
+  padding-right: 5px;
 }
 
 #pulseaudio,
 #custom-battery {
-  font-size: 13px;
-}
-
-#battery.charging {
-  color: green;
+  /* font-size: 13px; */
 }
 
 #pulseaudio.muted {
   color: rgba(255, 0, 0, 0.4);
 }
 
-#custom-power-menu {
+#custom-app-menu {
+  color: #B8B0D7;
+  background: #22095D;
+
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
+  margin-left: 10px;
+
   padding-left: 10px;
-  font-size: 20px;
-  color: cornflowerblue;
+  padding-right: 10px;
+
+  border-radius: 6px;
+  font-weight: 900;
 }
