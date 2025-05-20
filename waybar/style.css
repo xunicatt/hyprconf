@@ -93,10 +93,11 @@ button:hover {
 #custom-keyboard-brightness,
 #pulseaudio,
 #custom-battery {
-  color: #22095D;
-  background: #B8B0D7;
+  background: #22095D;
+  color: #B8B0D7;
 
   margin-top: 5px;
+  border: solid 1px #B8B0D7;
 
   padding-left: 8px;
   padding-right: 8px;
@@ -115,6 +116,11 @@ button:hover {
   border-top-left-radius : 8px;
   border-bottom-left-radius : 8px;
   padding-left: 10px;
+  padding-right: 10px;
+}
+
+#memory {
+  padding-right: 10px;
 }
 
 #pulseaudio.muted {
