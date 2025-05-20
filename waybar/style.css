@@ -23,10 +23,19 @@ button:hover {
   transition: none;
 }
 
-#window {
+#custom-app-menu {
+  color: #B8B0D7;
+  background: #22095D;
+
   margin-top: 5px;
   margin-left: 10px;
-  color: rgba(255, 255, 255, 0.596);
+  margin-right: 10px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border-radius: 6px;
+  font-weight: 900;
 }
 
 #workspaces {
@@ -72,31 +81,50 @@ button:hover {
   color: red;
 }
 
-#custom-power-menu {
-  margin-right: 15px;
+#window {
+  margin-top: 5px;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.596);
 }
 
+#custom-timedate,
 #cpu,
 #memory,
-#pulseaudio,
-#custom-battery,
 #custom-keyboard-brightness,
-#custom-timedate {
+#pulseaudio,
+#custom-battery {
   color: #22095D;
   background: #B8B0D7;
 
   margin-top: 5px;
-  /* margin-bottom: 5px; */
 
   padding-left: 8px;
   padding-right: 8px;
 
-  border-radius: 8px;
   font-weight: 500;
 }
 
 #custom-timedate {
   font-weight: 600;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+}
+
+#cpu {
+  border-top-left-radius : 8px;
+  border-bottom-left-radius : 8px;
+  padding-left: 10px;
+}
+
+#pulseaudio.muted {
+  color: rgba(255, 0, 0, 0.4);
+}
+
+#custom-battery {
+  border-top-right-radius : 8px;
+  border-bottom-right-radius : 8px;
+  padding-right: 10px;
 }
 
 #custom-netwifi,
@@ -108,34 +136,14 @@ button:hover {
   font-size: 14px;
 
   margin-top: 5px;
-  /* margin-bottom: 5px; */
+  margin-left: 10px;
 }
 
 #custom-notification {
-  margin-left: 8px;
-  padding-right: 5px;
+  margin-left: 18px;
+  padding-right: 8px;
 }
 
-#pulseaudio,
-#custom-battery {
-  /* font-size: 13px; */
-}
-
-#pulseaudio.muted {
-  color: rgba(255, 0, 0, 0.4);
-}
-
-#custom-app-menu {
-  color: #B8B0D7;
-  background: #22095D;
-
-  margin-top: 5px;
-  /* margin-bottom: 5px; */
-  margin-left: 10px;
-
-  padding-left: 10px;
-  padding-right: 10px;
-
-  border-radius: 6px;
-  font-weight: 900;
+#custom-power-menu {
+  margin-right: 15px;
 }

@@ -3,7 +3,7 @@
   "layer": "top",
   "output": "eDP-1",
   "height": 35,
-  "spacing": 10,
+  "spacing": 0,
   "modules-left": [
     "custom/app-menu",
     "hyprland/workspaces",
@@ -81,7 +81,6 @@
   },
   "custom/notification": {
     "exec": "~/.bin/notification",
-    // "format": "{} ",
     "on-click": "dunstctl set-paused toggle",
     "restart-interval": 1,
   },
