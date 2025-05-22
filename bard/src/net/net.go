@@ -68,7 +68,6 @@ func getWifiStatus() (enabled bool, connected bool) {
 func getBluetoothStatus() bool {
 	conn, _ := dbus.SystemBus()
 	obj := conn.Object("org.bluez", "/org/bluez/hci0")
-	obj = conn.Object("org.bluez", "/org/bluez/hci0")
 	ablu, _ := obj.GetProperty("org.bluez.Adapter1.Powered")
 	return ablu.Value().(bool)
 }
