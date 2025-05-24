@@ -20,7 +20,10 @@ packages=(
     alacritty
     dunst
     rofi-wayland
-    go
+    g go
+    firefox
+    nautilus
+    xrdbo
     firefox
     nautilus
     xrdb
@@ -30,6 +33,7 @@ scripts=(
     reload
     hyprshot
     notification
+    music
 )
 
 function sync {

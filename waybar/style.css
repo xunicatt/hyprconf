@@ -1,3 +1,5 @@
+@import 'color.css';
+
 * {
   font-family: "MesloLGLDZ Nerd Font";
   font-size: 12px;
@@ -10,22 +12,23 @@ window#waybar {
 }
 
 button {
+  color: transparent;
   border: none;
+
   border-radius: 0;
   box-shadow: none;
-  color: transparent;
 }
 
 button:hover {
+  background: none;
   box-shadow: none;
   text-shadow: none;
-  background: none;
   transition: none;
 }
 
 #custom-app-menu {
-  color: #B8B0D7;
-  background: #22095D;
+  color: @text;
+  background: @primary;
 
   margin-top: 5px;
   margin-left: 10px;
@@ -34,27 +37,27 @@ button:hover {
   padding-left: 10px;
   padding-right: 10px;
 
-  border-radius: 6px;
+  border-radius: 25px;
   font-weight: 900;
 }
 
 #workspaces {
-  background: #B8B0D7;
+  background: @primary-xl;
+  border: solid 1px @secondary;
 
   margin-top: 5px;
-  /* margin-bottom: 5px; */
 
   padding-left: 4px;
   padding-right: 0px;
   padding-top: 4px;
   padding-bottom: 4px;
 
-  border-radius: 6px;
+  border-radius: 25px;
 }
 
 #workspaces button {
-  color: #B8B0D7;
-  background: #463682;
+  color: @text;
+  background: @primary;
 
   margin-right: 4px;
 
@@ -63,13 +66,14 @@ button:hover {
   padding-left: 8px;
   padding-right: 8px;
 
-  transition-duration: 0.35s;
-  border-radius: 4px;
+  border-radius: 25px;
   font-weight: 900;
+  transition-duration: 0.35s;
 }
 
 #workspaces button.active {
-  background: #22095D;
+  color: @secondary;
+  background: @primary-l;
 
   padding-left: 15px;
   padding-right: 15px;
@@ -82,9 +86,22 @@ button:hover {
 }
 
 #window {
+  color: @text;
+  background: @primary;
+  border: solid 1px @secondary;
+
   margin-top: 5px;
   margin-left: 10px;
-  color: rgba(255, 255, 255, 0.596);
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border-radius: 25px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  border: none;
 }
 
 #custom-timedate,
@@ -93,11 +110,11 @@ button:hover {
 #custom-keyboard-brightness,
 #pulseaudio,
 #custom-battery {
-  background: #22095D;
-  color: #B8B0D7;
+  color: @text;
+  background: @primary;
+  border: solid 1px @secondary;
 
   margin-top: 5px;
-  border: solid 1px #B8B0D7;
 
   padding-left: 8px;
   padding-right: 8px;
@@ -106,17 +123,35 @@ button:hover {
 }
 
 #custom-timedate {
-  font-weight: 600;
+  border: solid 1px @secondary;
+
   padding-left: 10px;
   padding-right: 10px;
+
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+#custom-music {
+  color: @text;
+  background: @primary;
+  border: solid 1px @secondary;
+
+  margin-top: 5px;
+  margin-right: 10px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
   border-radius: 25px;
 }
 
 #cpu {
-  border-top-left-radius : 8px;
-  border-bottom-left-radius : 8px;
   padding-left: 10px;
   padding-right: 10px;
+
+  border-top-left-radius : 25px;
+  border-bottom-left-radius : 25px;
 }
 
 #memory {
@@ -128,16 +163,17 @@ button:hover {
 }
 
 #custom-battery {
-  border-top-right-radius : 8px;
-  border-bottom-right-radius : 8px;
   padding-right: 10px;
+
+  border-top-right-radius : 25px;
+  border-bottom-right-radius : 25px;
 }
 
 #custom-netwifi,
 #custom-netblu,
 #custom-notification,
 #custom-power-menu {
-  color: #B8B0D7;
+  color: @text;
   background: transparent;
   font-size: 14px;
 
@@ -151,5 +187,5 @@ button:hover {
 }
 
 #custom-power-menu {
-  margin-right: 15px;
+  margin-right: 25px;
 }
