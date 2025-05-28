@@ -9,6 +9,7 @@ config_dirs=(
     rofi
     tmux
     waybar
+    fastfetch
 )
 packages=(
     wl-clipboard
@@ -20,10 +21,7 @@ packages=(
     alacritty
     dunst
     rofi-wayland
-    g go
-    firefox
-    nautilus
-    xrdbo
+    go
     firefox
     nautilus
     xrdb
