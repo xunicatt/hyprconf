@@ -33,7 +33,7 @@ scripts=(
     reload
     hyprshot
     notification
-    music
+    timedate-music
 )
 
 function sync {

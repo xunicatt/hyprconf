@@ -9,9 +9,8 @@
     "hyprland/workspaces",
     "hyprland/window",
   ],
-  "modules-center": ["custom/timedate"],
+  "modules-center": ["custom/timedate-music"],
   "modules-right": [
-    "custom/music",
     "cpu",
     "memory",
     "custom/keyboard-brightness",
@@ -47,14 +46,6 @@
     },
   },
   //right
-  "custom/music": {
-    "format": "{}",
-    "exec": "~/.bin/music",
-    "interval": 1,
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "hide-empty-text": true
-  },
   "cpu": {
     "interval": 10,
     "format": "{usage:2d}% ",
@@ -65,9 +56,12 @@
     "format": "{percentage:2d}% ",
     "max-length": 10,
   },
-  "custom/timedate": {
-    "exec": "~/go/bin/bard time-date",
+  "custom/timedate-music": {
+    "exec": "~/.bin/timedate-music",
     "format": "{}",
+    "max-length": 80,
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
     "interval": 1,
   },
   "custom/battery": {

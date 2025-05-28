@@ -34,8 +34,8 @@ button:hover {
   margin-left: 10px;
   margin-right: 10px;
 
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   border-radius: 25px;
   font-weight: 900;
@@ -104,7 +104,7 @@ window#waybar.empty #window {
   border: none;
 }
 
-#custom-timedate,
+#custom-timedate-music,
 #cpu,
 #memory,
 #custom-keyboard-brightness,
@@ -122,28 +122,14 @@ window#waybar.empty #window {
   font-weight: 500;
 }
 
-#custom-timedate {
+#custom-timedate-music {
   border: solid 1px @secondary;
 
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   border-radius: 25px;
   font-weight: 600;
-}
-
-#custom-music {
-  color: @text;
-  background: @primary;
-  border: solid 1px @secondary;
-
-  margin-top: 5px;
-  margin-right: 10px;
-
-  padding-left: 20px;
-  padding-right: 20px;
-
-  border-radius: 25px;
 }
 
 #cpu {

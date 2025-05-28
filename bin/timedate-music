@@ -1,0 +1,13 @@
+time_date=$(date "+%d %b %Y %I:%M %p")
+status=$(playerctl -p psst status 2>/dev/null)
+title=$(playerctl -p psst metadata title 2>/dev/null | sed 's/"//g')
+
+if [[ "$status" == "Paused" ]]; then
+    echo "{\"text\": \"$time_date     $title\"}"
+    exit 0
+elif [[ "$status" == "Playing" ]]; then
+    echo "{\"text\": \"$time_date     $title\"}"
+    exit 0
+fi
+
+echo "{\"text\": \"$time_date\"}"
