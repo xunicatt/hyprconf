@@ -10,6 +10,7 @@ config_dirs=(
     tmux
     waybar
     fastfetch
+    nvim
 )
 packages=(
     wl-clipboard

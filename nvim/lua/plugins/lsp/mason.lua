@@ -1,0 +1,20 @@
+return {
+  "williamboman/mason.nvim",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  config = function ()
+    local mason = require("mason")
+
+    mason.setup({
+      ensure_installed = {
+        "html",
+        "cssls",
+        "tailwindcss",
+        "lua_ls",
+        "clangd",
+        "gopls",
+      }
+    })
+  end
+}
