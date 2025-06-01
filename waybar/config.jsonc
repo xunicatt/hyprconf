@@ -1,7 +1,7 @@
 {
   //root
   "layer": "top",
-  "output": "eDP-1",
+  "output": "HDMI-A-1",
   "height": 35,
   "spacing": 0,
   "modules-left": [
@@ -13,12 +13,8 @@
   "modules-right": [
     "cpu",
     "memory",
-    "custom/keyboard-brightness",
     "pulseaudio",
-    "custom/battery",
     "custom/notification",
-    "custom/netwifi",
-    "custom/netblu",
     "custom/power-menu",
   ],
   //left

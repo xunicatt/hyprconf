@@ -43,7 +43,8 @@ button:hover {
 
 #workspaces {
   background: @primary-xl;
-  border: solid 1px @secondary;
+  /* border: solid 1px @secondary; */
+  border: none;
 
   margin-top: 5px;
 
@@ -88,7 +89,8 @@ button:hover {
 #window {
   color: @text;
   background: @primary;
-  border: solid 1px @secondary;
+  /* border: solid 1px @secondary; */
+  border: none;
 
   margin-top: 5px;
   margin-left: 10px;
@@ -112,7 +114,7 @@ window#waybar.empty #window {
 #custom-battery {
   color: @text;
   background: @primary;
-  border: solid 1px @secondary;
+  border-right: solid 2px @secondary;
 
   margin-top: 5px;
 
@@ -123,7 +125,8 @@ window#waybar.empty #window {
 }
 
 #custom-timedate-music {
-  border: solid 1px @secondary;
+  /* border: solid 1px @secondary; */
+  border: none;
 
   padding-left: 15px;
   padding-right: 15px;
@@ -148,9 +151,10 @@ window#waybar.empty #window {
   color: rgba(255, 0, 0, 0.4);
 }
 
-#custom-battery {
+#pulseaudio {
   padding-right: 10px;
 
+  border-right: none;
   border-top-right-radius : 25px;
   border-bottom-right-radius : 25px;
 }

@@ -32,6 +32,7 @@ scripts=(
     hyprshot
     notification
     timedate-music
+    launcher
 )
 
 function sync {
@@ -49,9 +50,6 @@ function sync {
         cp -f "$custom_scripts_dir/$script" bin;
         echo "[INFO] synced script '$custom_scripts_dir/$script'";
     done
-
-    cp "$HOME/.Xresources" .;
-    echo "[INFO] copied '.Xresources' file";
 }
 
 function install {
