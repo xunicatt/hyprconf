@@ -15,7 +15,16 @@ const (
 	NETWORK_MANAGER_IFACE = "org.freedesktop.NetworkManager"
 )
 
-func getWifiStatus() (enabled bool, connected bool) {
+func getWifiIcon(connected bool, strength uint8) string {
+	if !connected {
+		return NET_WIFI_ENABLE_ICON
+	}
+
+	icons := []string{"󰤟", "󰤢", "󰤥", "󰤨"}
+	return icons[int(strength/25)]
+}
+
+func getWifiStatus() (enabled bool, connected bool, strength uint8) {
 	conn, err := dbus.SystemBus()
 	if err != nil {
 		panic(err)
@@ -56,6 +65,31 @@ func getWifiStatus() (enabled bool, connected bool) {
 
 		if state.Value().(uint32) == 100 {
 			connected = true
+
+			var activeAP dbus.Variant
+			if err = dev.Call(
+				"org.freedesktop.DBus.Properties.Get",
+				0,
+				"org.freedesktop.NetworkManager.Device.Wireless",
+				"ActiveAccessPoint",
+			).Store(&activeAP); err != nil {
+				continue
+			}
+
+			apPath := activeAP.Value().(dbus.ObjectPath)
+			ap := conn.Object(NETWORK_MANAGER_IFACE, apPath)
+
+			var strengthVariant dbus.Variant
+			if err = ap.Call(
+				"org.freedesktop.DBus.Properties.Get",
+				0,
+				"org.freedesktop.NetworkManager.AccessPoint",
+				"Strength",
+			).Store(&strengthVariant); err != nil {
+				continue
+			}
+
+			strength = strengthVariant.Value().(uint8)
 			return
 		} else {
 			connected = false
@@ -87,14 +121,10 @@ func GetBluetooth() string {
 
 func GetWifi() string {
 	res := ""
-	wifiEnabled, wifiConnected := getWifiStatus()
+	wifiEnabled, wifiConnected, wifiStrength := getWifiStatus()
 
 	if wifiEnabled {
-		if wifiConnected {
-			res += NET_WIFI_CONNECTED_ICON
-		} else {
-			res += NET_WIFI_ENABLE_ICON
-		}
+			res += getWifiIcon(wifiConnected, wifiStrength)
 	} else {
 		res += NET_WIFI_DISABLE_ICON
 	}
@@ -104,7 +134,7 @@ func GetWifi() string {
 
 func ToggleWifi() {
 	conn, _ := dbus.SystemBus()
-	enabled, _ := getWifiStatus()
+	enabled, _, _ := getWifiStatus()
 
 	nm := conn.Object(NETWORK_MANAGER_IFACE, "/org/freedesktop/NetworkManager")
 	if err := nm.Call(

@@ -13,7 +13,6 @@
   "modules-right": [
     "cpu",
     "memory",
-    "custom/keyboard-brightness",
     "pulseaudio",
     "custom/battery",
     "custom/notification",
