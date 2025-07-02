@@ -1,8 +1,9 @@
 {
   //root
   "layer": "top",
-  "output": "HDMI-A-1",
-  "height": 35,
+  "output": "DP-1",
+  "height": 30,
+  "margin": "5",
   "spacing": 0,
   "modules-left": [
     "custom/app-menu",

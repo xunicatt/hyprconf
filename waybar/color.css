@@ -1,6 +1,3 @@
-@define-color primary rgba(30, 30, 46, 0.3);
-@define-color primary-l rgba(49, 50, 68, 1.0);
-@define-color primary-xl rgba(69, 71, 90, 0.6);
-@define-color border @primary-l;
-@define-color text rgba(205, 214, 244, 1.0);
-@define-color secondary rgba(156, 207, 216, 1.0);
+@define-color primary transparent;
+@define-color secondary rgba(49, 50, 68, 1.0);
+@define-color text rgba(255, 255, 255, 0.5); 

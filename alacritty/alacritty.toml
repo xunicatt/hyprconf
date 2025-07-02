@@ -26,10 +26,6 @@ bindings = [
     { key = "T", mods = "Control|Shift", action = "CreateNewWindow" },
     { key = "V", mods = "Control|Shift", action = "Paste" },
     { key = "C", mods = "Control|Shift", action = "Copy" },
-    { key = "U", mods = "Control", action = "ScrollLineUp" },
-    { key = "D", mods = "Control", action = "ScrollLineDown" },
-    { key = "U", mods = "Control|Shift", action = "ScrollHalfPageUp" },
-    { key = "D", mods = "Control|Shift", action = "ScrollHalfPageDown" }
 ]
 
 [general]
