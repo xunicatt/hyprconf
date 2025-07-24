@@ -10,8 +10,8 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  /* border-radius: 25px; */
   transition-duration: 100ms;
 }
 
@@ -34,13 +34,14 @@ button:hover {
   color: @text;
   background: @primary;
 
-  margin-left: 5px;
-  margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
 
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 10px;
 
-  border-radius: 10px;
+  border-radius: 5px;
+
   font-weight: 900;
 }
 
@@ -48,32 +49,31 @@ button:hover {
   background: @primary;
   border: none;
 
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px;
 
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #workspaces button {
-  color: @secondary;
+  color: #4B4376;
   background: @primary;
 
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
 
-  border-radius: 8px;
-  font-weight: 200;
+  border-radius: 2px;
+  font-weight: 400;
   transition-duration: 0.35s;
 }
 
 #workspaces button.active {
   color: @text;
-  background: @primary;
+  background: #4B4376;
 
+  padding-left: 12px;
+  padding-right: 12px;
   font-weight: 900;
   box-shadow: none;
 }
@@ -85,14 +85,12 @@ button:hover {
 #window {
   color: @text;
   background: @primary;
-  border: none;
+  border-radius: 5px;
 
-  margin-left: 10px;
+  /* margin-left: 10px; */
 
   padding-left: 10px;
   padding-right: 10px;
-
-  border-radius: 10px;
 }
 
 window#waybar.empty #window {
@@ -103,8 +101,7 @@ window#waybar.empty #window {
 #custom-timedate-music,
 #cpu,
 #memory,
-#pulseaudio,
-#custom-battery {
+#pulseaudio {
   color: @text;
   background: @primary;
 
@@ -117,8 +114,11 @@ window#waybar.empty #window {
 #custom-timedate-music {
   color: @text;
 
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 15px;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 
   font-weight: 600;
 }
@@ -126,6 +126,8 @@ window#waybar.empty #window {
 #cpu {
   padding-left: 10px;
   padding-right: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #memory {
@@ -140,10 +142,9 @@ window#waybar.empty #window {
   padding-right: 10px;
 }
 
-#custom-netwifi,
-#custom-netblu,
 #custom-notification,
-#custom-power-menu {
+#custom-power-menu,
+#custom-toggle-aux-display {
   color: @text;
   background: transparent;
   font-size: 14px;
@@ -151,8 +152,11 @@ window#waybar.empty #window {
   margin-left: 10px;
 }
 
-#custom-notification {
+#custom-toggle-aux-display {
   margin-left: 18px;
+}
+
+#custom-notification {
   padding-right: 8px;
 }
 

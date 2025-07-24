@@ -1,20 +1,24 @@
 {
   //root
   "layer": "top",
-  "output": "DP-1",
+  "output": "DP-3",
   "height": 30,
-  "margin": "5",
+  "margin-bottom": 5,
+  "margin-top": 5,
   "spacing": 0,
   "modules-left": [
     "custom/app-menu",
-    "hyprland/workspaces",
     "hyprland/window",
   ],
-  "modules-center": ["custom/timedate-music"],
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
   "modules-right": [
     "cpu",
     "memory",
     "pulseaudio",
+    "custom/timedate-music",
+    "custom/toggle-aux-display",
     "custom/notification",
     "custom/power-menu",
   ],
@@ -61,11 +65,6 @@
     "on-click": "playerctl play-pause",
     "interval": 1,
   },
-  "custom/battery": {
-    "exec": "~/go/bin/bard battery",
-    "format": "{}",
-    "interval": 2,
-  },
   "pulseaudio": {
     "format": "{volume}% 󰕾",
     "format-muted": "Muted 󰖁",
@@ -73,29 +72,15 @@
     "on-click-right": "pavucontrol",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   },
-  "custom/keyboard-brightness": {
-    "format": "{}%  ",
-    "exec": "brightnessctl -m -d kbd_backlight | awk -F, '{print substr($4, 0, length($4)-1)}'",
-    "on-scroll-up": "brightnessctl -d kbd_backlight s +10%",
-    "on-scroll-down": "brightnessctl -d kbd_backlight s 10%-",
-    "interval": 1,
-    "scroll-step": 1,
+  "custom/toggle-aux-display": {
+    "exec": "~/.bin/aux_display_status",
+    "on-click": "~/.bin/aux_display_toggle",
+    "format": "{} ",
+    "restart-interval": 1,
   },
   "custom/notification": {
     "exec": "~/.bin/notification",
     "on-click": "dunstctl set-paused toggle",
     "restart-interval": 1,
-  },
-  "custom/netwifi": {
-    "exec": "~/go/bin/bard net-wifi",
-    "format": "{} ",
-    "interval": 2,
-    "on-click": "~/go/bin/bard net-wifi-toggle",
-  },
-  "custom/netblu": {
-    "exec": "~/go/bin/bard net-blu",
-    "format": "{} ",
-    "interval": 2,
-    "on-click": "~/go/bin/bard net-blu-toggle",
   },
 }

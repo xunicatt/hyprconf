@@ -1,12 +1,12 @@
-time_date=$(date "+%d %b %Y %I:%M %p")
+time_date=$(date "+ %d/%m   %H:%M")
 status=$(playerctl -p spotify status 2>/dev/null)
 title=$(playerctl -p spotify metadata title 2>/dev/null | sed 's/"//g')
 
 if [[ "$status" == "Paused" ]]; then
-    echo "{\"text\": \"$time_date     $title\"}"
+    echo "{\"text\": \"$time_date    $title \"}"
     exit 0
 elif [[ "$status" == "Playing" ]]; then
-    echo "{\"text\": \"$time_date     $title\"}"
+    echo "{\"text\": \"$time_date    $title \"}"
     exit 0
 fi
 

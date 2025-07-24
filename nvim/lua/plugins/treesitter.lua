@@ -23,6 +23,10 @@ return {
         "gitignore",
         "c",
         "cpp",
+        "svelte",
+        "typescript",
+        "zig",
+        "go",
       },
       incremental_selection = {
         enable = true,

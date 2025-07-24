@@ -45,5 +45,30 @@ return {
         })
       end
     })
+
+    config.gopls.setup({
+      capabilities = capabilities,
+      settings = {
+        gopls = {
+          gofumpt = true,
+          analyses = {
+            unusedparams = true,
+            shadow = true,
+          },
+          staticcheck = true,
+        },
+      },
+      on_attach = function(client, bufnr)
+        if client.server_capabilities.documentFormattingProvider then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("GoFormat", {}),
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({ async = false })
+            end,
+          })
+        end
+      end
+    })
   end
 }
