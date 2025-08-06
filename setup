@@ -34,6 +34,8 @@ scripts=(
     notification
     timedate-music
     launcher
+    aux_display_toggle
+    aux_display_status
 )
 
 function sync {

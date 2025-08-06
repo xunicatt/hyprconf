@@ -1,0 +1,13 @@
+#!/bin/bash
+
+MONITOR_NAME="HDMI-A-1"
+
+monitor_info=$(hyprctl monitors | grep -A 17 "$MONITOR_NAME")
+
+if echo "$monitor_info" | grep -q "disabled: false"
+then
+    echo ""
+else
+    echo ""
+fi
+

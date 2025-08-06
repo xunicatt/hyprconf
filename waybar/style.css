@@ -35,14 +35,21 @@ button:hover {
   background: @primary;
 
   margin-left: 10px;
-  margin-right: 5px;
+  margin-right: 0px;
 
-  padding-left: 15px;
-  padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 3px;
 
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 
   font-weight: 900;
+}
+
+window#waybar.empty #custom-app-menu {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-right: 10px;
 }
 
 #workspaces {
@@ -85,10 +92,11 @@ button:hover {
 #window {
   color: @text;
   background: @primary;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 
   /* margin-left: 10px; */
-
+  font-weight: 900;
   padding-left: 10px;
   padding-right: 10px;
 }
