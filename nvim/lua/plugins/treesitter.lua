@@ -27,6 +27,7 @@ return {
         "typescript",
         "zig",
         "go",
+        "c_sharp",
       },
       incremental_selection = {
         enable = true,

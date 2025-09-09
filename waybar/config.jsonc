@@ -60,7 +60,7 @@
   "custom/timedate-music": {
     "exec": "~/.bin/timedate-music",
     "format": "{}",
-    "max-length": 80,
+    "max-length": 50,
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "interval": 1,
